@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Durga Sharma | Data Analyst Portfolio</title>
+    <!-- SEO -->
+    <meta name="description" content="Data Analyst Portfolio">
+    <link rel="icon" href="https://via.placeholder.com/32/3b82f6/ffffff?text=DS">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+    <div id="preloader"><div class="spinner"></div></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <nav class="navbar">
+        <div class="container">
+            <h2 class="logo">DS<span>.</span></h2>
+            <button class="mobile-nav-toggle" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+            <div class="nav-wrapper" id="navWrapper">
+                <ul class="nav-links">
+                    <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
+                    <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+                    <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
+                    <li><a href="#projects" onclick="closeMobileMenu()">Projects</a></li>
+                    <li><a href="#certifications" onclick="closeMobileMenu()">Certifications</a></li>
+                    <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+                </ul>
+                <div class="nav-socials">
+                    <a href="https://www.linkedin.com/in/durga-sharma-0a2b2135a" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/" target="_blank" class="social-icon github"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/durgasharma7856?igsh=MWR0cG9wY2l2aDVlcA==" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ADMIN FLOATING MENU -->
+    <div id="adminFab" class="admin-fab-container">
+        <button class="fab-main" onclick="toggleFabMenu()"><i class="fas fa-plus"></i></button>
+        <div class="fab-options">
+            <button onclick="openProjectModal('completed')"><i class="fas fa-check-circle" style="color:#10b981;"></i> Add Completed Project</button>
+            <button onclick="openProjectModal('ongoing')"><i class="fas fa-spinner" style="color:#f59e0b;"></i> Add Ongoing Project</button>
+            <button onclick="openCertModal()"><i class="fas fa-certificate" style="color:#3b82f6;"></i> Add Certificate</button>
+            <button onclick="openSkillModal()"><i class="fas fa-tools" style="color:#ec4899;"></i> Add Technical Skill</button>
+            <button onclick="openTraitModal()"><i class="fas fa-user-check" style="color:#8b5cf6;"></i> Add "Why Me" Card</button>
+            <button onclick="openServiceModal()"><i class="fas fa-briefcase" style="color:#f59e0b;"></i> Add Service</button>
+            <button onclick="document.getElementById('photoInputHidden').click()"><i class="fas fa-camera" style="color:#8b5cf6;"></i> Upload Profile Photo</button>
+            <button onclick="document.getElementById('cvInputHidden').click()"><i class="fas fa-file-pdf" style="color:#ef4444;"></i> Upload Resume</button>
+            <button onclick="openAdminModal()"><i class="fas fa-inbox" style="color:#fff;"></i> View Inbox / Edit Text</button>
+        </div>
+    </div>
+    <input type="file" id="cvInputHidden" style="display:none;" onchange="uploadSetting('cvPath', 'cvInputHidden')">
+    <input type="file" id="photoInputHidden" style="display:none;" onchange="uploadSetting('profilePhoto', 'photoInputHidden')">
+
+    <a href="#" id="floatingResume" class="resume-float" title="Download Resume"><i class="fas fa-file-pdf"></i></a>
+    <button class="theme-toggle" id="themeToggle"><i class="fas fa-sun"></i></button>
+    <button id="scrollTopBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Home -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text animate-up">
+                <span class="badge">Available for Work</span>
+                <h1>Hi, I'm <span class="highlight">Durga Sharma</span></h1>
+                <h2 class="typing-text" id="disp_hero_title">Aspiring Data Analyst</h2>
+                <p class="hero-p" id="disp_hero_desc">Transforming raw data into actionable insights.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#" id="cvDownload" class="btn btn-secondary" target="_blank"><i class="fas fa-download"></i> Download CV</a>
+                </div>
+            </div>
+            <div class="image-blob">
+                <img id="profilePhoto" src="https://via.placeholder.com/300">
+                <div id="profileEditBtn" class="profile-edit-btn" onclick="document.getElementById('photoInputHidden').click()"><i class="fas fa-camera"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics -->
+    <div class="metrics-bar reveal">
+        <div class="metric-item"><h3 id="disp_metric_1">5+</h3><p>Projects</p></div>
+        <div class="metric-separator"></div>
+        <div class="metric-item"><h3 id="disp_metric_2">50k+</h3><p>Rows Analyzed</p></div>
+        <div class="metric-separator"></div>
+        <div class="metric-item"><h3 id="disp_metric_3">3+</h3><p>Tools</p></div>
+    </div>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title reveal">About Me</h2>
+            <div class="about-content">
+                <div class="about-card reveal" style="margin-bottom: 2rem; text-align: center;">
+                    <h3>My Journey</h3>
+                    <p id="disp_about_text" style="text-align:center; max-width:800px; margin:auto;">Loading Bio...</p>
+                </div>
+                
+                <!-- Dynamic Skills -->
+                <h3 class="reveal" style="text-align: center; margin: 3rem 0 2rem 0;">Technical Expertise</h3>
+                <div class="skills-row" id="skillsGrid"></div>
+
+                <!-- Dynamic Traits -->
+                <h3 class="reveal" style="text-align: center; margin: 3rem 0 2rem 0;">Why Me?</h3>
+                <div class="skills-row" id="traitsGrid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="about">
+        <div class="container">
+            <h2 class="section-title reveal">Services I Deliver</h2>
+            <div class="skills-row" id="servicesGrid"></div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title reveal">Featured Projects</h2>
+            <div class="projects-grid" id="completedProjectsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications" class="certs">
+        <div class="container">
+            <h2 class="section-title reveal">Certifications</h2>
+            <div class="certs-grid" id="certsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Ongoing -->
+    <section id="ongoing" class="projects">
+        <div class="container">
+            <h2 class="section-title reveal">Work in Progress</h2>
+            <div class="projects-grid" id="ongoingProjectsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title reveal">Get In Touch</h2>
+            <div class="contact-content-grid reveal">
+                <div class="contact-text-side">
+                    <h3>Let's Collaborate!</h3>
+                    <p class="contact-desc">Feel free to drop a message.</p>
+                    <div class="contact-details-list">
+                        <div class="info-item"><i class="fas fa-envelope"></i><a href="#" class="contact-link" id="disp_email">Loading...</a></div>
+                        <div class="info-item"><i class="fas fa-phone"></i><p id="disp_phone">Loading...</p></div>
+                        <div class="info-item"><i class="fas fa-map-marker-alt"></i><p id="disp_address">Loading...</p></div>
+                    </div>
+                </div>
+                <div class="form-card-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <h3>Send Message</h3>
+                        <input type="text" id="msgName" placeholder="Your Name" required>
+                        <input type="email" id="msgEmail" placeholder="Your Email" required>
+                        <textarea id="msgText" placeholder="Message..." rows="5" required></textarea>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container"><p class="copyright">&copy; 2024 Durga Sharma. All Rights Reserved.</p></div>
+    </footer>
+
+    <!-- MODALS -->
+    
+    <!-- Admin Dashboard -->
+    <div id="adminModal" class="modal">
+        <div class="modal-content large-modal" style="max-height:80vh; overflow-y:auto;">
+            <span class="close" onclick="closeModal('adminModal')">&times;</span>
+            <h2>Admin Dashboard</h2>
+            <div class="admin-tabs">
+                <button onclick="showAdminTab('content')">Text Content</button>
+                <button onclick="showAdminTab('messages')">Inbox</button>
+            </div>
+            <hr>
+            <div id="tab-content" class="admin-tab-content">
+                <p>Hero Title:</p><input type="text" id="edit_hero_title"><button onclick="saveContent('hero_title', 'edit_hero_title')">Save</button>
+                <p>Bio:</p><textarea id="edit_about_text" rows="4"></textarea><button onclick="saveContent('about_text', 'edit_about_text')">Save</button>
+                <p>Email:</p><input type="text" id="edit_email"><button onclick="saveContent('email', 'edit_email')">Save</button>
+                <p>Phone:</p><input type="text" id="edit_phone"><button onclick="saveContent('phone', 'edit_phone')">Save</button>
+                <hr>
+                <div class="form-row">
+                    <div style="flex:1"><p>Metric 1:</p><input type="text" id="edit_metric_1"><button onclick="saveContent('metric_1', 'edit_metric_1')">Update</button></div>
+                    <div style="flex:1"><p>Metric 2:</p><input type="text" id="edit_metric_2"><button onclick="saveContent('metric_2', 'edit_metric_2')">Update</button></div>
+                    <div style="flex:1"><p>Metric 3:</p><input type="text" id="edit_metric_3"><button onclick="saveContent('metric_3', 'edit_metric_3')">Update</button></div>
+                </div>
+            </div>
+            <div id="tab-messages" class="admin-tab-content" style="display:none;">
+                <button onclick="loadMessages()" class="btn btn-secondary" style="width:100%; margin-bottom:1rem;">Refresh Inbox</button>
+                <div id="inboxList"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Modal (Dynamic Media) -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content large-modal">
+            <span class="close" onclick="closeModal('projectModal')">&times;</span>
+            <h3 id="modalTitle">Add Project</h3>
+            <form id="projectForm">
+                <input type="hidden" id="pId"> <input type="hidden" id="pStatus"> <input type="hidden" id="existingMedia">
+                <div class="form-row">
+                    <input type="text" id="pTitle" placeholder="Project Title" required style="flex:1;">
+                    <input type="text" id="pLink" placeholder="Project Link" style="flex:1;">
+                </div>
+                <textarea id="pDesc" placeholder="Project Description..." rows="5" required></textarea>
+                
+                <p>Technologies (comma separated):</p>
+                <input type="text" id="pTools" placeholder="e.g. Python, SQL, Power BI" required>
+
+                <div class="media-upload-section">
+                    <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-secondary" onclick="document.getElementById('pMediaInput').click()"><i class="fas fa-plus"></i> Add Photo/Video</button>
+                        <input type="file" id="pMediaInput" multiple accept="image/*,video/*" style="display:none;" onchange="handleFileSelect(this)">
+                    </div>
+                    <div id="mediaPreviewGrid" class="media-preview-grid"></div>
+                </div>
+                <button type="submit" class="btn btn-primary full-width" style="margin-top:1rem;">Save Project</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cert Modal (PDF) -->
+    <div id="certModal" class="modal">
+        <div class="modal-content large-modal">
+            <span class="close" onclick="closeModal('certModal')">&times;</span>
+            <h3>Add Certification</h3>
+            <form id="certForm">
+                <input type="hidden" id="cId">
+                <div class="form-row">
+                    <input type="text" id="cName" placeholder="Name" required style="flex:1;">
+                    <input type="text" id="cOrg" placeholder="Organization" required style="flex:1;">
+                </div>
+                <input type="text" id="cDate" placeholder="Date" required>
+                <input type="text" id="cLink" placeholder="Link (Optional)">
+                <div class="upload-zone" onclick="document.getElementById('cImg').click()">
+                    <i class="fas fa-file-pdf"></i><p>Upload Certificate (PDF)</p>
+                    <input type="file" id="cImg" accept="application/pdf" style="display:none;">
+                </div>
+                <button type="submit" class="btn btn-primary full-width">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Skill Modal (Image Upload) -->
+    <div id="skillModal" class="modal">
+        <div class="modal-content large-modal">
+            <span class="close" onclick="closeModal('skillModal')">&times;</span>
+            <h3>Add Technical Expertise</h3>
+            <form id="skillForm">
+                <input type="hidden" id="sId">
+                <input type="text" id="sName" placeholder="Skill Name" required>
+                <p>Skill Icon (Image):</p>
+                <input type="file" id="sIcon">
+                <input type="hidden" id="sExistingIcon">
+                <textarea id="sDesc" placeholder="Description..." rows="3" required></textarea>
+                <div class="level-select">
+                    <label><input type="radio" name="sLevel" value="Learning" checked> Learning</label>
+                    <label><input type="radio" name="sLevel" value="Beginner"> Beginner</label>
+                    <label><input type="radio" name="sLevel" value="Intermediate"> Intermediate</label>
+                    <label><input type="radio" name="sLevel" value="Advanced"> Advanced</label>
+                    <label><input type="radio" name="sLevel" value="Expert"> Expert</label>
+                </div>
+                <button type="submit" class="btn btn-primary full-width" style="margin-top:1rem;">Save Skill</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Trait Modal -->
+    <div id="traitModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('traitModal')">&times;</span>
+            <h3>Add "Why Me" Card</h3>
+            <form id="traitForm">
+                <input type="hidden" id="tId">
+                <input type="text" id="tTitle" placeholder="Title (e.g. Curious Problem Solver)" required>
+                <textarea id="tDesc" placeholder="Description..." rows="3" required></textarea>
+                <button type="submit" class="btn btn-primary full-width">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Service Modal -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('serviceModal')">&times;</span>
+            <h3>Add Service</h3>
+            <form id="serviceForm">
+                <input type="hidden" id="svcId">
+                <input type="text" id="svcTitle" placeholder="Service Title" required>
+                <textarea id="svcDesc" placeholder="Description..." rows="3" required></textarea>
+                <button type="submit" class="btn btn-primary full-width">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Fullscreen -->
+    <div id="fullscreenViewer" class="fullscreen-modal" onclick="closeFullscreen(event)">
+        <span class="close-fullscreen" onclick="closeFullscreen(event)">&times;</span>
+        <div class="zoom-controls" onclick="event.stopPropagation()">
+            <button onclick="zoomImage(0.2)"><i class="fas fa-search-plus"></i></button>
+            <button onclick="zoomImage(-0.2)"><i class="fas fa-search-minus"></i></button>
+            <button onclick="resetZoom()"><i class="fas fa-compress-arrows-alt"></i></button>
+        </div>
+        <div class="fullscreen-img-container"><img class="fullscreen-content" id="fullscreenImg" onwheel="handleWheelZoom(event)"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
