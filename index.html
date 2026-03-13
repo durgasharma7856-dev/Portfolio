@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Durga Sharma | Data Analyst Portfolio</title>
+    <!-- SEO -->
+    <meta name="description" content="Data Analyst Portfolio">
+    <link rel="icon" href="https://via.placeholder.com/32/3b82f6/ffffff?text=DS">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="preloader"><div class="spinner"></div></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <nav class="navbar">
+        <div class="container">
+            <h2 class="logo">DS<span>.</span></h2>
+            <button class="mobile-nav-toggle" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+            <div class="nav-wrapper" id="navWrapper">
+                <ul class="nav-links">
+                    <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
+                    <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+                    <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
+                    <li><a href="#projects" onclick="closeMobileMenu()">Projects</a></li>
+                    <li><a href="#certifications" onclick="closeMobileMenu()">Certifications</a></li>
+                    <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+                </ul>
+                <div class="nav-socials">
+                    <a href="https://www.linkedin.com/in/durga-sharma-0a2b2135a" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/" target="_blank" class="social-icon github"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/durgasharma7856?igsh=MWR0cG9wY2l2aDVlcA==" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ADMIN FLOATING MENU -->
+
+    <a href="#" id="floatingResume" class="resume-float" title="Download Resume"><i class="fas fa-file-pdf"></i></a>
+    <button class="theme-toggle" id="themeToggle"><i class="fas fa-sun"></i></button>
+    <button id="scrollTopBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Home -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text animate-up">
+                <span class="badge">Available for Work</span>
+                <h1>Hi, I'm <span class="highlight">Durga Sharma</span></h1>
+                <h2 class="typing-text" id="disp_hero_title">Data & Business Intelligence Professional</h2>
+                <p class="hero-p" id="disp_hero_desc">I bridge the gap between complex data and actionable decision-making. Using SQL, Power BI, and Excel, I help businesses grow by transforming raw numbers into impactful visual stories.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#" id="cvDownload" class="btn btn-secondary" target="_blank"><i class="fas fa-download"></i> Download CV</a>
+                </div>
+            </div>
+            <div class="image-blob">
+                <img src="profile.jpg" alt="Durga Sharma">
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics -->
+    <div class="metrics-bar reveal">
+        <div class="metric-item"><h3 id="disp_metric_1">5+</h3><p>Projects</p></div>
+        <div class="metric-separator"></div>
+        <div class="metric-item"><h3 id="disp_metric_2">50k+</h3><p>Rows Analyzed</p></div>
+        <div class="metric-separator"></div>
+        <div class="metric-item"><h3 id="disp_metric_3">3+</h3><p>Tools</p></div>
+    </div>
+
+    <!-- About -->
+  <section id="about" class="about">
+    <div class="container">
+
+        <h2 class="section-title reveal">About Me</h2>
+
+        <!-- About Me Block -->
+        <div class="about-single reveal">
+            <p>
+                I am a Data & Business Intelligence Professional with a strong foundation in SQL, Power BI, and Advanced Excel. 
+                As a final-year BCA student at Sarala Birla University, Ranchi, I focus on solving real-world business problems through data.
+
+                I don’t just analyze data — I interpret it strategically. My goal is to transform complex datasets into clear insights 
+                that support smarter decision-making and measurable business growth.
+            </p>
+        </div>
+
+        <!-- Journey Divider -->
+        <div class="journey-divider reveal">
+            <span>My Journey</span>
+        </div>
+
+        <!-- Journey Block -->
+        <div class="about-single reveal journey-style">
+            <p>
+                My journey into data analytics began during my BCA studies, where I discovered how structured data 
+                could influence business outcomes. What started as learning SQL queries and Excel formulas 
+                gradually evolved into building dashboards and analyzing real-world datasets.
+
+                Through projects like Financial Market Trend Analysis and E-commerce Sales Profitability Analysis, 
+                I gained hands-on experience uncovering trends and supporting data-driven decisions.
+
+                Each project strengthened my belief that data is not just numbers — it’s a strategic asset.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+    <!-- Services -->
+    <section id="services" class="about">
+        <div class="container">
+            <h2 class="section-title reveal">Services I Deliver</h2>
+          <div class="skills-row services-grid">
+
+    <!-- Service 1 -->
+    <div class="service-card reveal" style="transition-delay: 0s;">
+        <div class="service-icon">
+            <i class="fas fa-database"></i>
+        </div>
+        <h4>Data Analysis & Business Insights</h4>
+        <p>
+            Extracting, transforming, and analyzing structured datasets using SQL 
+            to uncover trends, answer business questions, and drive data-backed decisions.
+        </p>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="service-card reveal" style="transition-delay: 0.15s;">
+        <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+        </div>
+        <h4>Business Intelligence Dashboards</h4>
+        <p>
+            Designing interactive Power BI dashboards with proper data modeling,
+            Power Query transformations, and optimized DAX measures.
+        </p>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="service-card reveal" style="transition-delay: 0.3s;">
+        <div class="service-icon">
+            <i class="fas fa-file-excel"></i>
+        </div>
+        <h4>Automated Reporting (MIS)</h4>
+        <p>
+            Creating automated Excel dashboards and reporting systems
+            that reduce manual effort and improve operational efficiency.
+        </p>
+    </div>
+
+    <!-- Service 4 -->
+    <div class="service-card reveal" style="transition-delay: 0.45s;">
+        <div class="service-icon">
+            <i class="fas fa-broom"></i>
+        </div>
+        <h4>Data Cleaning & Preparation</h4>
+        <p>
+            Transforming messy datasets into clean, structured,
+            and analysis-ready formats to ensure reliable reporting.
+        </p>
+    </div>
+
+</div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title reveal">Featured Projects</h2>
+<div class="projects-grid">
+
+    <div class="project-card">
+        <h3>Sales Dashboard</h3>
+        <p>Analyzed 50k+ sales records to identify revenue drivers. Built interactive Power BI dashboard.</p>
+        <div class="project-tools">
+            <span class="project-tag">Power BI</span>
+            <span class="project-tag">SQL</span>
+            <span class="project-tag">Excel</span>
+        </div>
+        <a href="https://github.com" target="_blank" class="btn btn-primary">View</a>
+    </div>
+
+    <div class="project-card">
+        <h3>Customer Churn Analysis</h3>
+        <p>Predicted churn using Python and machine learning models.</p>
+        <div class="project-tools">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Machine Learning</span>
+        </div>
+        <a href="https://github.com" target="_blank" class="btn btn-primary">View</a>
+    </div>
+
+</div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications" class="certs">
+        <div class="container">
+            <h2 class="section-title reveal">Certifications</h2>
+            <div class="certs-grid">
+
+<div class="cert-card">
+<h3>Google Data Analytics</h3>
+<p>Coursera - Oct 2023</p>
+<a href="certificate.pdf" target="_blank" class="btn btn-primary">View</a>
+</div>
+
+</div>
+        </div>
+    </section>
+
+    <!-- Ongoing -->
+    <section id="ongoing" class="projects">
+        <div class="container">
+            <h2 class="section-title reveal">Work in Progress</h2>
+            <div class="projects-grid" id="ongoingProjectsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title reveal">Get In Touch</h2>
+            <div class="contact-content-grid reveal">
+                <div class="contact-text-side">
+                    <h3>Let's Collaborate!</h3>
+                    <p class="contact-desc">Feel free to drop a message.</p>
+                    <div class="contact-details-list">
+                        <div class="info-item"><i class="fas fa-envelope"></i>
+                        <a href="mailto:durgasharma7856@gmail.com" class="contact-link">
+                                    durgasharma7856@gmail.com
+                                    </a>
+</div>
+                        <div class="info-item"><i class="fas fa-phone"></i><p id="disp_phone">+91-9060279491</p></div>
+                        <div class="info-item"><i class="fas fa-map-marker-alt"></i><p id="disp_address">Ranchi, Jharkhand</p></div>
+                    </div>
+                </div>
+                <div class="form-card-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <h3>Send Message</h3>
+                        <input type="text" id="msgName" placeholder="Your Name" required>
+                        <input type="email" id="msgEmail" placeholder="Your Email" required>
+                        <textarea id="msgText" placeholder="Message..." rows="5" required></textarea>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container"><p class="copyright">&copy; 2024 Durga Sharma. All Rights Reserved.</p></div>
+    </footer>
+
+  
+
+    <script src="script.js"></script>
+</body>
+</html>
