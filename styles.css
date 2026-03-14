@@ -1039,3 +1039,13 @@ textarea {
 .project-card:hover .project-thumbnail img {
     transform: scale(1.08);
 }
+
+/* ===============================
+   STACK PROJECTS VERTICALLY
+================================ */
+
+#projects .projects-grid {
+    grid-template-columns: 1fr;
+    max-width: 1400px;
+    margin: 0 auto;
+}
