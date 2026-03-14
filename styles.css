@@ -1079,9 +1079,12 @@ textarea {
 
 .skills-modern-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 2.5rem;
     margin-top: 3rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .skill-modern-card {
@@ -1132,15 +1135,3 @@ textarea {
     line-height: 1.5;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-    .skills-modern-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 576px) {
-    .skills-modern-grid {
-        grid-template-columns: 1fr;
-    }
-}
